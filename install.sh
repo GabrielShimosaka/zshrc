@@ -31,6 +31,8 @@ download_source() {
 	git clone https://github.com/GabrielShimosaka/zshrc.git tmp  >> /dev/null
 	mv tmp/src/.* $HOME/
 	rm -rf tmp
+	# Kali customization
+	[[ $(lsb_release -i | awk '{print $3}') == 'Kali' ]] && sudo apt update && sudo apt install -y kali-win-kex
 }
 
 apply(){

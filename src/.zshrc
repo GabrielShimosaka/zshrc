@@ -50,6 +50,7 @@ fi
 [[ ! -f $HOME/.homebrew/bin/brew ]] && git clone https://github.com/Homebrew/brew.git $HOME/.homebrew/
 [[ ! -f $HOME/.homebrew/bin/brew ]] || export PATH=$HOME/.homebrew/bin:$PATH
 [[ ! -f $HOME/.homebrew/bin/brew ]] || export HOMEBREW_GIT_PATH=$(which git)
+[[ ! -f $HOME/.homebrew/bin/gcc ]] && brew update && brew upgrade && brew install gcc
 [[ ! -f $HOME/.homebrew/bin/bat ]] && brew update && brew upgrade && brew install bat
 [[ ! -f $HOME/.homebrew/bin/exa ]] && brew update && brew upgrade && brew install exa
 [[ ! -f $HOME/.homebrew/bin/fd ]] && brew update && brew upgrade && brew install fd
