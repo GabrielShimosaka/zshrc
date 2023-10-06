@@ -33,7 +33,11 @@ download_source() {
 	rm -rf tmp
 	# Kali customization
 	if [[ $(lsb_release -i | awk '{print $3}') == 'Kali' ]]; then
-		sudo apt update && sudo apt install -y kali-win-kex && sudo apt install -y gcc
+		echo 'Installing kali-win-kex - gcc - make'
+		sudo apt update
+		sudo apt install -y kali-win-kex
+		sudo apt install -y gcc
+		sudo apt install -y make
 	fi
 }
 
