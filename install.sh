@@ -32,16 +32,16 @@ download_source() {
 	mv tmp/src/.* $HOME/
 	rm -rf tmp
 	# Kali customization
-	[[ $(lsb_release -i | awk '{print $3}') == 'Kali' ]] && sudo apt update && sudo apt install -y kali-win-kex
+	if [[ $(lsb_release -i | awk '{print $3}') == 'Kali' ]]; then
+		sudo apt update && sudo apt install -y kali-win-kex && sudo apt install -y gcc
+	fi
 }
 
 apply(){
 	source $HOME/.p10k.zsh
 	source $HOME/.zshenv
 	source $HOME/.zshrc
-	if [[ -f $HOME/.zshrc.pre-oh-my-zsh ]]; then
-		mv $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc
-	fi
+	[[ -f $HOME/.zshrc.pre-oh-my-zsh ]] && mv $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc
 	source $HOME/.zshrc
 	exec zsh -l
 }
