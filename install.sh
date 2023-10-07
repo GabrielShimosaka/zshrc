@@ -35,9 +35,9 @@ download_source() {
 	if [[ $(lsb_release -i | awk '{print $3}') == 'Kali' ]]; then
 		echo 'Installing kali-win-kex - gcc - make'
 		sudo apt update
-		sudo apt install -y kali-win-kex
-		sudo apt install -y gcc
-		sudo apt install -y make
+		sudo apt install -y build-essential
+		sudo apt install -y ninja-build gettext cmake unzip curl
+  		sudo apt install -y kali-win-kex
 	fi
 }
 
