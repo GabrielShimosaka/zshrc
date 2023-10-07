@@ -55,6 +55,7 @@ fi
 [[ ! -f $HOME/.homebrew/bin/fd ]] && brew update && brew upgrade && brew install fd
 [[ ! -f $HOME/.homebrew/bin/fzf ]] && brew update && brew upgrade && brew install fzf
 [[ ! -f $HOME/.homebrew/bin/jq ]] && brew update && brew upgrade && brew install jq
+[[ ! -f $HOME/.homebrew/bin/lazygit ]] && brew update && brew upgrade && brew install lazygit
 [[ ! -f $HOME/.homebrew/bin/micro ]] && brew update && brew upgrade && brew install micro
 [[ ! -f $HOME/.homebrew/bin/rg ]] && brew update && brew upgrade && brew install ripgrep
 
