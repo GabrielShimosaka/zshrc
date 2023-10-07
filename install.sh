@@ -31,12 +31,22 @@ download_source() {
 	git clone https://github.com/GabrielShimosaka/zshrc.git tmp  >> /dev/null
 	mv tmp/src/.* $HOME/
 	rm -rf tmp
-	# Kali customization
+}
+
+update_package_manager(){
+	# Customization per distro
+	if [[ -f /etc/os-release ]]; then
+	    if grep -q -E '^(ID|ID_LIKE)="?(debian|debian-based)"?' /etc/os-release; then
+	    	echo 'Debian like distro found.'
+	    	sudo apt update -y && sudo apt upgrade -y
+	    	sudo apt install -y build-essential ninja-build gettext cmake unzip curl
+		else
+			echo 'Current currently not mapped.'
+    	fi
+   	fi
+   	# Kali win kex for WSL
 	if [[ $(lsb_release -i | awk '{print $3}') == 'Kali' ]]; then
-		echo 'Installing kali-win-kex - gcc - make'
-		sudo apt update
-		sudo apt install -y build-essential
-		sudo apt install -y ninja-build gettext cmake unzip curl
+		echo 'Installing kali-win-kex'
   		sudo apt install -y kali-win-kex
 	fi
 }
@@ -54,6 +64,7 @@ main() {
 	echo 'Starting instalation'
 	save_current_zsh
 	download_source
+ 	update_package_manager
 	apply
 }
 
