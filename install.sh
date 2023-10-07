@@ -41,7 +41,7 @@ update_package_manager(){
 		    	sudo apt update -y && sudo apt upgrade -y
 		    	sudo apt install -y build-essential ninja-build gettext cmake unzip curl
 		else
-			echo 'Current currently not mapped.'
+			echo 'Distro currently not mapped.'
     		fi
    	fi
    	# Kali win kex for WSL
