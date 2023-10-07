@@ -36,13 +36,13 @@ download_source() {
 update_package_manager(){
 	# Customization per distro
 	if [[ -f /etc/os-release ]]; then
-	    if grep -q -E '^(ID|ID_LIKE)="?(debian|debian-based)"?' /etc/os-release; then
-	    	echo 'Debian like distro found.'
-	    	sudo apt update -y && sudo apt upgrade -y
-	    	sudo apt install -y build-essential ninja-build gettext cmake unzip curl
+		if grep -q -E '^(ID|ID_LIKE)="?(debian|debian-based)"?' /etc/os-release; then
+		    	echo 'Debian like distro found.'
+		    	sudo apt update -y && sudo apt upgrade -y
+		    	sudo apt install -y build-essential ninja-build gettext cmake unzip curl
 		else
 			echo 'Current currently not mapped.'
-    	fi
+    		fi
    	fi
    	# Kali win kex for WSL
 	if [[ $(lsb_release -i | awk '{print $3}') == 'Kali' ]]; then
