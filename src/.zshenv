@@ -2,8 +2,6 @@
 
 # A L I A S E S
 
-alias l='exa --tree --level=1'
-alias L='exa --tree --level=1 --long --all'
 alias f='fd'
 alias rm-plugins='rm -rf .asdf .homebrew .oh-my-zsh .p10k.zsh .tool-versions .zsh/* .zshenv .zshrc'
 alias apt-update='sudo apt update -y && sudo apt upgrade -y'

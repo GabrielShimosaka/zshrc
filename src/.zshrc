@@ -51,7 +51,6 @@ fi
 [[ ! -f $HOME/.homebrew/bin/brew ]] || export PATH=$HOME/.homebrew/bin:$PATH
 [[ ! -f $HOME/.homebrew/bin/brew ]] || export HOMEBREW_GIT_PATH=$(which git)
 [[ ! -f $HOME/.homebrew/bin/bat ]] && brew update && brew upgrade && brew install bat
-[[ ! -f $HOME/.homebrew/bin/exa ]] && brew update && brew upgrade && brew install exa
 [[ ! -f $HOME/.homebrew/bin/fd ]] && brew update && brew upgrade && brew install fd
 [[ ! -f $HOME/.homebrew/bin/fzf ]] && brew update && brew upgrade && brew install fzf
 [[ ! -f $HOME/.homebrew/bin/jq ]] && brew update && brew upgrade && brew install jq
